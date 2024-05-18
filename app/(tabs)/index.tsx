@@ -4,8 +4,27 @@ import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import Login from "@/components/Login";
 import Colors from "@/constants/Colors";
+import { useEffect } from "react";
+import { supabase } from "@/supabase";
 
 export default function TabOneScreen() {
+
+
+  const pruebas = async () => {
+
+    let { data: categories,  } = await supabase
+      .from('categories')
+      .select('*')
+    console.log({categories});
+
+  }
+
+  useEffect(() => {
+    (async () => {
+      await pruebas()}
+    )()
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.loginContainer}>

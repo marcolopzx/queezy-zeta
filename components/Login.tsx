@@ -11,9 +11,6 @@ export default function Login({ path }: { path: string }) {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  console.log("DIANA - email", email);
-  console.log("DIANA - password", password);
-
   const handleSignUpWithEmail = async () => {
     setLoading(true);
     try {
@@ -34,7 +31,7 @@ export default function Login({ path }: { path: string }) {
   const handleLoginWithEmail = async () => {
     setLoading(true);
     try {
-      await supabase.auth.signInWithPassword({
+      const data = await supabase.auth.signInWithPassword({
         email,
         password,
       });
