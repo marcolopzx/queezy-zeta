@@ -31,7 +31,7 @@ export default function Login({ path }: { path: string }) {
   const handleLoginWithEmail = async () => {
     setLoading(true);
     try {
-      await supabase.auth.signInWithPassword({
+      const data = await supabase.auth.signInWithPassword({
         email,
         password,
       });
