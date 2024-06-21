@@ -11,9 +11,6 @@ export default function Login({ path }: { path: string }) {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  console.log("DIANA - email", email);
-  console.log("DIANA - password", password);
-
   const handleSignUpWithEmail = async () => {
     setLoading(true);
     try {
